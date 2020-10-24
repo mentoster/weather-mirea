@@ -31,7 +31,7 @@ SECRET_KEY = '(pwke-)ejizcy+##62vwo)9-6x#d7t8oxr*qm9p_l7_3!gbtl#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['weather-mirea.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['weather-mirea.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
