@@ -58,19 +58,19 @@ var makeItRain = function () {
 	$(".rain.front-row").append(drops);
 	$(".rain.back-row").append(backDrops);
 };
-var date = new Date();
-var timeNode = document.getElementById("NowTime");
-function getCurrentTimeString() {
-	var date2 = new Date();
-	var result = "" + date2.getHours() + ":" + date2.getMinutes();
-	return result;
-}
-timeNode.innerHTML = getCurrentTimeString();
-
 $("body").toggleClass("splat-toggle");
 $(".splat-toggle.toggle").toggleClass("active");
-setInterval(
-	() => (timeNode.innerHTML = getCurrentTimeString() + downInfo),
-	1000
-);
+// make rain
 makeItRain();
+
+var timeNode = document.getElementById("NowTime");
+alert(timeNode);
+function getCurrentTimeString() {
+	var date = new Date();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	alert(hours.toString + ":" + minutes.toString);
+	return hours.toString + ":" + minutes.toString;
+}
+
+setInterval(() => (timeNode.innerHTML = getCurrentTimeString()), 60000);

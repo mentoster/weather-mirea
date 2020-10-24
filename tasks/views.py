@@ -8,7 +8,18 @@ import time
 
 
 def index(request):
+    days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Субботу', 'Воскресенье'
+            ]
+    months = [
+        'января', 'февраля', 'марта', 'апреля', 'майя', 'июнь', 'июля', 'августа', 'сентября',
+        'октября', 'ноября', 'декабря'
+    ]
+    # среда, 21 октября 2020 г.
+
     context = {
-        "timenow": time.strftime("%H:%M", time.localtime())
+        "NowDate": days[time.localtime().tm_wday] +
+        time.strftime(
+            ", %d, "+months[time.localtime().tm_mon]+" %Y г.", time.localtime())
+
     }
     return render(request, 'tasks/index.html', context)
