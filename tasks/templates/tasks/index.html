@@ -1,143 +1,137 @@
-{% load staticfile %}
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Сайт по погоде для МИРЭА</title>
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-	</head>
-	<body class="back-row-toggle splat-toggle">
-		<div class="top">
+{% extends 'tasks/base.html' %} {% block content %} {% load static %}
+<div class="top">
+	<div>
+		<img
+			class="top-imagine"
+			src="{% static 'images/Icons/gps.png' %}"
+			alt="position icon"
+		/>
+	</div>
+	<div>
+		<p>Москва, Москва, Россия</p>
+	</div>
+</div>
+<div class="topWidget">
+	<div class="tools">
+		<div style="float: left">
+			<div class="top">
+				<div class="temperature">8</div>
+				<div class="C">°C</div>
+			</div>
+		</div>
+		<div class="center">
+			<img
+				style="margin-top: -75px"
+				src="{% static 'images/cloud.png' %}"
+				alt=""
+			/>
+		</div>
+		<div style="float: right" class="rightInfo">Небольшой дождь</div>
+	</div>
+</div>
+<div class="bodyWidget">
+	<div class="tools">
+		<div style="float: left" class="rightInfo">По ощущениям <b>8°</b></div>
+		<div class="center">
+			<span id="NowTime"
+				>14:11
+				<p id="NowDate">среда, 21 октября 2020 г.</p>
+			</span>
+		</div>
+		<div style="float: right" class="rightInfo">
+			Мин 1° <span style="color: #ffffff30"> | </span> Макс 10°
+		</div>
+	</div>
+</div>
+<div class="bottomWidget">
+	<div class="tools">
+		<div style="float: left">
+			<div class="tools">
+				<div style="float: left; margin-left: 50px">
+					<img
+						class="ico"
+						src="{% static 'images/Icons/humidity.png' %}"
+						alt="Влажность"
+					/>
+					<p class="bottomHeader">Влажность</p>
+					<p class="bottomText">50%</p>
+				</div>
+				<div style="float: right; margin-left: 50px">
+					<img
+						class="ico"
+						src="{% static 'images/Icons/umbrella.png' %}"
+						alt="Осадки"
+					/>
+					<p class="bottomHeader">Осадки</p>
+					<p class="bottomText">1,2мм</p>
+				</div>
+			</div>
+		</div>
+		<div class="center" style="margin-left: -12px; margin-top: 23px">
 			<div>
-				<img
-					class="top-imagine"
-					src="Imagines\Icons\gps.png"
-					alt="position icon"
-				/>
-			</div>
-			<div>
-				<p>Москва, Москва, Россия</p>
-			</div>
-		</div>
-		<div class="topWidget">
-			<div class="tools">
-				<div style="float: left">
-					<div class="top">
-						<div class="temperature">8</div>
-						<div class="C">°C</div>
-					</div>
-				</div>
-				<div class="center">
-					<img style="margin-top: -75px" src="Imagines\cload.png" alt="" />
-				</div>
-				<div style="float: right" class="rightInfo">Небольшой дождь</div>
-			</div>
-		</div>
-		<div class="bodyWidget">
-			<div class="tools">
-				<div style="float: left" class="rightInfo">По ощущениям <b>8°</b></div>
-				<div class="center">
-					<span id="NowTime"
-						>14:11
-						<p id="NowDate">среда, 21 октября 2020 г.</p>
-					</span>
-				</div>
-				<div style="float: right" class="rightInfo">
-					Мин 1° <span style="color: #ffffff30"> | </span> Макс 10°
-				</div>
-			</div>
-		</div>
-		<div class="bottomWidget">
-			<div class="tools">
-				<div style="float: left">
-					<div class="tools">
-						<div style="float: left; margin-left: 50px">
-							<img
-								class="ico"
-								src="Imagines\Icons\humidity.png"
-								alt="Влажность"
-							/>
-							<p class="bottomHeader">Влажность</p>
-							<p class="bottomText">50%</p>
-						</div>
-						<div style="float: right; margin-left: 50px">
-							<img class="ico" src="Imagines\Icons\umbrella.png" alt="Осадки" />
-							<p class="bottomHeader">Осадки</p>
-							<p class="bottomText">1,2мм</p>
-						</div>
-					</div>
-				</div>
-				<div class="center" style="margin-left: -12px; margin-top: 23px">
+				<img src="{% static 'images/compassBackground.png' %}" alt="" />
+				<div style="position: relative; margin-top: -118px; margin-left: 2px">
 					<div>
-						<img src="Imagines\compassBackground.png" alt="" />
-						<div
-							style="position: relative; margin-top: -118px; margin-left: 2px"
-						>
-							<div>
-								<img src="Imagines\compass.png" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div style="float: right">
-					<div class="tools">
-						<div style="float: left; margin-right: 50px">
-							<img
-								class="ico"
-								src="Imagines\Icons\thermometer.png"
-								alt="Давление"
-							/>
-							<p class="bottomHeader">Давление</p>
-							<p class="bottomText">759 мм</p>
-						</div>
-						<div style="float: right; margin-right: 50px">
-							<img class="ico" src="Imagines\Icons\eye.png" alt="Видимость" />
-							<p class="bottomHeader">Видимость</p>
-							<p class="bottomText">10 км</p>
-						</div>
+						<img src="{% static 'images/compass.png' %}" alt="" />
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="bottomBottom">
-			<br />
-			<div>
-				<table>
-					<thead>
-						<tr>
-							<th>сейчас</th>
-							<th>17:00</th>
-							<th>20:00</th>
-							<th>23:00</th>
-							<th>2:00</th>
-							<th>5:00</th>
-							<th>8:00</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>8°</td>
-							<td>5°</td>
-							<td>2°</td>
-							<td>0°</td>
-							<td>1°</td>
-							<td>3°</td>
-							<td>6°</td>
-						</tr>
-					</tbody>
-				</table>
+		<div style="float: right">
+			<div class="tools">
+				<div style="float: left; margin-right: 50px">
+					<img
+						class="ico"
+						src="{% static 'images/Icons/thermometer.png' %}"
+						alt="Давление"
+					/>
+					<p class="bottomHeader">Давление</p>
+					<p class="bottomText">759 мм</p>
+				</div>
+				<div style="float: right; margin-right: 50px">
+					<img
+						class="ico"
+						src="{% static 'images/Icons/eye.png' %}"
+						alt="Видимость"
+					/>
+					<p class="bottomHeader">Видимость</p>
+					<p class="bottomText">10 км</p>
+				</div>
 			</div>
 		</div>
-		<!-- rain -->
-		<div class="rain front-row"></div>
-		<div class="rain back-row"></div>
-		<!--  -->
-		<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-		<script src="main.js"></script>
-		<script type="text/javascript" src={% static "js/main.js" %}></script>
-	</body>
-</html>
+	</div>
+</div>
+<div class="bottomBottom">
+	<br />
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>сейчас</th>
+					<th>17:00</th>
+					<th>20:00</th>
+					<th>23:00</th>
+					<th>2:00</th>
+					<th>5:00</th>
+					<th>8:00</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>8°</td>
+					<td>5°</td>
+					<td>2°</td>
+					<td>0°</td>
+					<td>1°</td>
+					<td>3°</td>
+					<td>6°</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!-- rain -->
+<div class="rain front-row"></div>
+<div class="rain back-row"></div>
+<!--  -->
+{% endblock content %}

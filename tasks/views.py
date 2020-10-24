@@ -8,4 +8,5 @@ from .models import todo, todomonth, todoweek
 
 
 def index(request):
-    return render(request, 'tasks/index.html')
+    context = {}
+    return render(request, 'tasks/index.html', context)
