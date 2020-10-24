@@ -19,7 +19,7 @@ def index(request):
     context = {
         "NowDate": days[time.localtime().tm_wday] +
         time.strftime(
-            ", %d, "+months[time.localtime().tm_mon]+" %Y г.", time.localtime())
+            ", %d, "+months[time.localtime().tm_mon-1]+" %Y г.", time.localtime())
 
     }
     return render(request, 'tasks/index.html', context)
