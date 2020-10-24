@@ -283,13 +283,13 @@ body.splat-toggle .splat {
 </style>
 	</head>
 	<body class="back-row-toggle splat-toggle">
+		{% block content %}
+		{% endblock content %}
+		<div class="rain back-row"></div>
+		<div class="rain front-row"></div>
 		<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<script src="main.js"></script>
-		{% block content %}
-		{% endblock content %}
-		<div class="rain front-row"></div>
-		<div class="rain back-row"></div>
 		<script type="text/javascript" src={% static "js/main.js" %}></script>
 	</body>
 </html>
