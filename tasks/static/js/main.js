@@ -62,7 +62,11 @@ var date = new Date();
 var timeNode = document.getElementById("NowTime");
 function getCurrentTimeString() {
 	var date2 = new Date();
-	var result = "" + date2.getHours() + ":" + date2.getMinutes();
+	var hours = date2.getHours();
+	var minutes = date2.getMinutes();
+	if (hours < 10) hours = "0" + hours;
+	if (minutes < 10) minutes = "0" + minutes;
+	var result = "" + hours + ":" + minutes;
 	return result;
 }
 timeNode.innerHTML = getCurrentTimeString();
