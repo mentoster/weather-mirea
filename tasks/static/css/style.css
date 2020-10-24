@@ -3,41 +3,307 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: top;
-	background-image: url(https://source.unsplash.com/1920x1080?portrait);
+	/* background-image: url(https://source.unsplash.com/2560x1440?rain); */
+	background-image: url("Imagines\\rain.png");
 	width: 100%;
 	height: 100%;
-	font-family: Arial, Helvetica;
+	font-family: "Roboto";
 	letter-spacing: 0.02em;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 }
-
-.glass {
-	width: 30rem;
-	height: 20rem;
-	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-	border-radius: 10px;
-	position: relative;
-	z-index: 1;
-	background: inherit;
-	overflow: hidden;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
+.white {
+	color: white;
+	text-shadow: 0px 0px 6px rgba(46, 46, 46, 0.7);
+}
+.top {
+	display: inline-block;
+	/* height: 5%; */
+	/*  */
+}
+.top div {
+	display: inline-block;
+	/* border: 1px solid rgb(255, 0, 0); */
+}
+.top p {
+	color: white;
+	font-family: "Roboto";
+	font-size: 150%;
+	/* padding-top: -10px; */
+}
+.top-imagine {
+	height: 39px;
+	width: 39px;
 }
 
-.glass:before {
-	content: "";
+.white {
+	color: white;
+}
+/*
+████████╗ ██████╗ ██████╗
+╚══██╔══╝██╔═══██╗██╔══██╗
+   ██║   ██║   ██║██████╔╝
+   ██║   ██║   ██║██╔═══╝
+   ██║   ╚██████╔╝██║
+   ╚═╝    ╚═════╝ ╚═╝
+*/
+.topWidget {
+	background-image: url("Imagines\\bodyTop.png");
+	margin: auto;
+	margin-bottom: 3px;
+	max-width: 1200px;
+	width: 922px;
+	height: 135px;
+}
+.temperature {
+	margin-left: 30px;
+	height: 128.17px;
+	color: #fff;
+	font-family: "Roboto Light";
+	font-size: 118px;
+	line-height: 138px;
+	text-align: right;
+}
+.C {
+	vertical-align: top;
+	color: #eee;
+	font-family: "Roboto";
+	font-size: 29px;
+}
+.tools {
+	position: relative;
+}
+.center {
 	position: absolute;
-	background: inherit;
-	z-index: -1;
-	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+}
+.rightInfo {
+	margin: 25px;
+	width: 220.72px;
+	color: #fff;
+	font-family: "Roboto Light";
+	font-size: 25px;
+	line-height: 29px;
+	text-align: right;
+}
+/*
+██████╗  ██████╗ ██████╗ ██╗   ██╗
+██╔══██╗██╔═══██╗██╔══██╗╚██╗ ██╔╝
+██████╔╝██║   ██║██║  ██║ ╚████╔╝
+██╔══██╗██║   ██║██║  ██║  ╚██╔╝
+██████╔╝╚██████╔╝██████╔╝   ██║
+╚═════╝  ╚═════╝ ╚═════╝    ╚═╝
+*/
+
+.bodyWidget {
+	background-image: url("Imagines\\body.png");
+	margin: auto;
+	max-width: 1200px;
+	width: 922px;
+	height: 267px;
+	margin-bottom: 3px;
+}
+#NowTime {
+	padding-top: 30px;
+	color: #fff;
+	font-family: "Roboto Light";
+	font-size: 161px;
+	line-height: 189px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#NowDate {
+	color: rgba(255, 255, 255, 0.486);
+	font-family: "Roboto";
+	font-size: 24px;
+	line-height: 28px;
+	margin-top: -20px;
+}
+
+/*
+██████╗  ██████╗ ████████╗████████╗ ██████╗ ███╗   ███╗
+██╔══██╗██╔═══██╗╚══██╔══╝╚══██╔══╝██╔═══██╗████╗ ████║
+██████╔╝██║   ██║   ██║      ██║   ██║   ██║██╔████╔██║
+██╔══██╗██║   ██║   ██║      ██║   ██║   ██║██║╚██╔╝██║
+██████╔╝╚██████╔╝   ██║      ██║   ╚██████╔╝██║ ╚═╝ ██║
+╚═════╝  ╚═════╝    ╚═╝      ╚═╝    ╚═════╝ ╚═╝     ╚═╝
+*/
+
+.bottomWidget {
+	background-image: url("Imagines\\bodybottom.png");
+	margin: auto;
+	max-width: 1200px;
+	width: 922px;
+	height: 166px;
+}
+.ico {
+	height: 35px;
+	width: 35px;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+}
+.bottomHeader {
+	color: rgba(255, 255, 255, 0.7);
+	font-family: Roboto;
+	font-size: 18px;
+	line-height: 28px;
+	text-align: center;
+	margin: 0px;
+}
+.bottomText {
+	color: rgb(255, 255, 255);
+	font-family: Roboto;
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+	margin-top: 10px;
+}
+/*
+██████╗  ██████╗ ██╗    ██╗███╗   ██╗
+██╔══██╗██╔═══██╗██║    ██║████╗  ██║
+██║  ██║██║   ██║██║ █╗ ██║██╔██╗ ██║
+██║  ██║██║   ██║██║███╗██║██║╚██╗██║
+██████╔╝╚██████╔╝╚███╔███╔╝██║ ╚████║
+╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═══╝
+*/
+.bottomBottom {
+	background-image: url("Imagines\\bottomBottom.png");
+	margin: auto;
+	max-width: 1200px;
+	width: 922px;
+	height: 89px;
+	margin-top: 3px;
+}
+
+.bottomBottom table {
+	margin: auto;
+}
+.bottomBottom th {
+	width: 107px;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: Roboto;
+	font-size: 19px;
+	line-height: 22px;
+	text-align: center;
+}
+.bottomBottom td {
+	width: 107px;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: Roboto;
+	font-size: 19px;
+	line-height: 22px;
+	text-align: center;
+}
+/*
+██████╗  █████╗ ██╗███╗   ██╗
+██╔══██╗██╔══██╗██║████╗  ██║
+██████╔╝███████║██║██╔██╗ ██║
+██╔══██╗██╔══██║██║██║╚██╗██║
+██║  ██║██║  ██║██║██║ ╚████║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+
+*/
+
+.rain {
+	position: absolute;
 	left: 0;
-	right: 0;
-	bottom: 0;
-	box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-	filter: blur(15px);
-	margin: -20px;
-	-webkit-filter: blur(15px);
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+.rain.back-row {
+	display: none;
+	z-index: 1;
+	bottom: 60px;
+	opacity: 0.5;
+}
+
+body.back-row-toggle .rain.back-row {
+	display: block;
+}
+
+.drop {
+	position: absolute;
+	bottom: 100%;
+	width: 15px;
+	height: 120px;
+	pointer-events: none;
+	animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+	0% {
+		transform: translateY(0vh);
+	}
+	75% {
+		transform: translateY(90vh);
+	}
+	100% {
+		transform: translateY(90vh);
+	}
+}
+
+.stem {
+	width: 1px;
+	height: 60%;
+	margin-left: 7px;
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0.25)
+	);
+	animation: stem 0.5s linear infinite;
+}
+
+@keyframes stem {
+	0% {
+		opacity: 1;
+	}
+	65% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.splat {
+	width: 15px;
+	height: 10px;
+	border-top: 2px dotted rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	opacity: 1;
+	transform: scale(0);
+	animation: splat 0.5s linear infinite;
+	display: none;
+}
+
+body.splat-toggle .splat {
+	display: block;
+}
+
+@keyframes splat {
+	0% {
+		opacity: 1;
+		transform: scale(0);
+	}
+	80% {
+		opacity: 1;
+		transform: scale(0);
+	}
+	90% {
+		opacity: 0.5;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
 }
