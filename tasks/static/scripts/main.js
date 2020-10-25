@@ -73,8 +73,5 @@ timeNode.innerHTML = getCurrentTimeString();
 
 $("body").toggleClass("splat-toggle");
 $(".splat-toggle.toggle").toggleClass("active");
-setInterval(
-	() => (timeNode.innerHTML = getCurrentTimeString() + downInfo),
-	1000
-);
+setInterval(() => (timeNode.innerHTML = getCurrentTimeString()), 1000);
 makeItRain();
