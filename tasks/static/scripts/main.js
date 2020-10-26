@@ -88,7 +88,7 @@ function setWeather(day) {
 			return Httpreq.responseText;
 		}
 		// weather data
-		var json_obj = JSON.parse(Get("http://wttr.in/moscow?format=j1&lang=ru"));
+		var json_obj = JSON.parse(Get("https://wttr.in/moscow?format=j1&lang=ru"));
 		// set currentParams
 		for (let i = 0; i < currentParams.length; i++) {
 			var element = document.getElementById(currentParams[i]);

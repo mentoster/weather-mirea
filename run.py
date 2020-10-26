@@ -6,8 +6,8 @@ commands = {
     # "python manage.py createsuperuser",
     # "python manage.py makemigrations tasks",
     # "python manage.py migrate",
-    "python manage.py collectstatic",
-    # "python manage.py runserver",
+    # "python manage.py collectstatic",
+    "python manage.py runserver",
     # "@echo I made my job...\n"
 }
 for command in commands:
