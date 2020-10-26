@@ -58,6 +58,53 @@ var makeItRain = function () {
 	$(".rain.front-row").append(drops);
 	$(".rain.back-row").append(backDrops);
 };
+
+function setWeather(day) {
+	/*
+	0 - at this time
+	1 - next  day
+	2 - next next day
+	 */
+
+	if (day == 0) {
+		let currentParams = [
+			"FeelsLikeC",
+			"temp_C",
+			"visibility",
+			"humidity",
+			"pressure",
+			"precipMM",
+			// compass params
+			// "windspeedKmph",
+			// "winddir16Point",
+			// "winddirDegree",
+		];
+		let allDayParams = ["maxtempC", "mintempC"];
+		let hoursParams = ["DewPointC"];
+		function Get(yourUrl) {
+			var Httpreq = new XMLHttpRequest(); // a new request
+			Httpreq.open("GET", yourUrl, false);
+			Httpreq.send(null);
+			return Httpreq.responseText;
+		}
+		// weather data
+		var json_obj = JSON.parse(Get("http://wttr.in/moscow?format=j1&lang=ru"));
+		// set currentParams
+		for (let i = 0; i < currentParams.length; i++) {
+			var element = document.getElementById(currentParams[i]);
+			element.innerHTML = json_obj.current_condition[0][currentParams[i]];
+		}
+		// set lang_ru value
+		var element = document.getElementById("weatherDesc");
+		element.innerHTML = json_obj.current_condition[0].lang_ru[0].value;
+		// set max and min temp
+		for (let i = 0; i < allDayParams.length; i++) {
+			var element = document.getElementById(allDayParams[i]);
+			element.innerHTML = json_obj.weather[0][allDayParams[i]];
+		}
+	}
+	makeItRain();
+}
 var date = new Date();
 var timeNode = document.getElementById("NowTime");
 function getCurrentTimeString() {
@@ -74,4 +121,4 @@ timeNode.innerHTML = getCurrentTimeString();
 $("body").toggleClass("splat-toggle");
 $(".splat-toggle.toggle").toggleClass("active");
 setInterval(() => (timeNode.innerHTML = getCurrentTimeString()), 1000);
-makeItRain();
+setWeather(0);

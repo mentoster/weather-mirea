@@ -2,6 +2,8 @@
 	"python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
 	"heroku-vscode.applicationName": "fakegames",
 	"cSpell.words": [
-		"staticfile"
+		"precip",
+		"staticfile",
+		"winddir"
 	]
 }

@@ -15,7 +15,7 @@
 	<div class="tools">
 		<div style="float: left">
 			<div class="top">
-				<div class="temperature">8</div>
+				<div class="temperature" id="temp_C"></div>
 				<div class="C">°C</div>
 			</div>
 		</div>
@@ -26,18 +26,23 @@
 				alt="дождь"
 			/>
 		</div>
-		<div style="float: right" class="rightInfo">Небольшой дождь</div>
+		<div style="float: right" class="rightInfo" id="weatherDesc">
+			Небольшой дождь
+		</div>
 	</div>
 </div>
 <div class="bodyWidget">
 	<div class="tools">
-		<div style="float: left" class="rightInfo">По ощущениям <b>8°</b></div>
+		<div style="float: left" class="rightInfo">
+			По ощущениям <b id="FeelsLikeC"></b>°
+		</div>
 		<div class="center">
 			<span id="NowTime"></span>
 			<p id="NowDate">{{ NowDate }}</p>
 		</div>
 		<div style="float: right" class="rightInfo">
-			Мин 1° <span style="color: #ffffff30"> | </span> Макс 10°
+			Мин <b id="mintempC"></b>° <span style="color: #ffffff30"> | </span> Макс
+			<b id="maxtempC"></b>°
 		</div>
 	</div>
 </div>
@@ -52,7 +57,7 @@
 						alt="Влажность"
 					/>
 					<p class="bottomHeader">Влажность</p>
-					<p class="bottomText">50%</p>
+					<p class="bottomText"><b id="humidity"></b>%</p>
 				</div>
 				<div style="float: right; margin-left: 50px">
 					<img
@@ -61,7 +66,7 @@
 						alt="Осадки"
 					/>
 					<p class="bottomHeader">Осадки</p>
-					<p class="bottomText">1,2мм</p>
+					<p class="bottomText"><b id="precipMM"></b> мм</p>
 				</div>
 			</div>
 		</div>
@@ -84,7 +89,7 @@
 						alt="Давление"
 					/>
 					<p class="bottomHeader">Давление</p>
-					<p class="bottomText">759 мм</p>
+					<p class="bottomText"><b id="pressure"></b> мм</p>
 				</div>
 				<div style="float: right; margin-right: 50px">
 					<img
@@ -93,7 +98,7 @@
 						alt="Видимость"
 					/>
 					<p class="bottomHeader">Видимость</p>
-					<p class="bottomText">10 км</p>
+					<p class="bottomText"><b id="visibility"></b> км</p>
 				</div>
 			</div>
 		</div>
@@ -112,6 +117,7 @@
 					<th>2:00</th>
 					<th>5:00</th>
 					<th>8:00</th>
+					<th>12:00</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -123,6 +129,7 @@
 					<td>1°</td>
 					<td>3°</td>
 					<td>6°</td>
+					<td>10°</td>
 				</tr>
 			</tbody>
 		</table>
