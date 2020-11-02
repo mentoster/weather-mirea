@@ -66,47 +66,50 @@ function setWeather(day) {
 	2 - next next day
 	 */
 
-	if (day == 0) {
-		let currentParams = [
-			"FeelsLikeC",
-			"temp_C",
-			"visibility",
-			"humidity",
-			"pressure",
-			"precipMM",
-			// compass params
-			// "windspeedKmph",
-			// "winddir16Point",
-			// "winddirDegree",
-		];
-		let allDayParams = ["maxtempC", "mintempC"];
-		let hoursParams = ["DewPointC"];
-		function Get(yourUrl) {
-			var Httpreq = new XMLHttpRequest(); // a new request
-			Httpreq.open("GET", yourUrl, false);
-			Httpreq.send(null);
-			return Httpreq.responseText;
-		}
-		// weather data
-		var json_obj = JSON.parse(Get("https://wttr.in/moscow?format=j1&lang=ru"));
-		// set currentParams
-		for (let i = 0; i < currentParams.length; i++) {
-			var element = document.getElementById(currentParams[i]);
-			element.innerHTML = json_obj.current_condition[0][currentParams[i]];
-		}
-		// set lang_ru value
-		var element = document.getElementById("weatherDesc");
-		element.innerHTML = json_obj.current_condition[0].lang_ru[0].value;
-		// set max and min temp
-		for (let i = 0; i < allDayParams.length; i++) {
-			var element = document.getElementById(allDayParams[i]);
-			element.innerHTML = json_obj.weather[0][allDayParams[i]];
-		}
+	let currentParams = [
+		"FeelsLikeC",
+		"temp_C",
+		"visibility",
+		"humidity",
+		"pressure",
+		"precipMM",
+		// compass params
+		// "windspeedKmph",
+		// "winddir16Point",
+		// "winddirDegree",
+	];
+	let allDayParams = ["maxtempC", "mintempC"];
+	function Get(yourUrl) {
+		var Httpreq = new XMLHttpRequest(); // a new request
+		Httpreq.open("GET", yourUrl, false);
+		Httpreq.send(null);
+		return Httpreq.responseText;
 	}
+	// weather data
+	var json_obj = JSON.parse(Get("https://wttr.in/moscow?format=j1&lang=ru"));
+	// set currentParams
+	for (let i = 0; i < currentParams.length; i++) {
+		var element = document.getElementById(currentParams[i]);
+		element.innerHTML = json_obj.current_condition[0][currentParams[i]];
+	}
+	// set lang_ru value
+	var element = document.getElementById("weatherDesc");
+	element.innerHTML = json_obj.current_condition[0].lang_ru[0].value;
+	// set max and min temp
+	for (let i = 0; i < allDayParams.length; i++) {
+		var element = document.getElementById(allDayParams[i]);
+		element.innerHTML = json_obj.weather[0][allDayParams[i]];
+	}
+
+	alert("wtf");
+	for (let i = 0; i < 7; i++) {
+		var element = document.getElementById("h" + [i]);
+		alert(json_obj.weather[0]["hourly"][i]);
+		element.innerHTML = json_obj.weather[0]["hourly"][i] + "°";
+	}
+
 	makeItRain();
 }
-var date = new Date();
-var timeNode = document.getElementById("NowTime");
 function getCurrentTimeString() {
 	var date2 = new Date();
 	var hours = date2.getHours();
@@ -116,9 +119,11 @@ function getCurrentTimeString() {
 	var result = "" + hours + ":" + minutes;
 	return result;
 }
+// start
+alert("wtf");
+var timeNode = document.getElementById("NowTime");
 timeNode.innerHTML = getCurrentTimeString();
-
 $("body").toggleClass("splat-toggle");
 $(".splat-toggle.toggle").toggleClass("active");
-setWeather(0);
+setWeather();
 setInterval(() => (timeNode.innerHTML = getCurrentTimeString()), 1000);

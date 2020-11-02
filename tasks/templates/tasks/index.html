@@ -1,16 +1,5 @@
 {% extends 'tasks/base.html' %} {% block content %} {% load static %}
-<div class="top">
-	<div>
-		<img
-			class="top-imagine"
-			src="{% static 'images/Icons/gps.png' %}"
-			alt="position icon"
-		/>
-	</div>
-	<div>
-		<p>Москва, Москва, Россия</p>
-	</div>
-</div>
+
 <div class="topWidget">
 	<div class="tools">
 		<div style="float: left">
@@ -19,16 +8,10 @@
 				<div class="C">°C</div>
 			</div>
 		</div>
-		<div class="center">
-			<img
-				style="margin-top: -75px"
-				src="{% static 'images/cloud.png' %}"
-				alt="дождь"
-			/>
+		<div class="center" style="margin-top: -75px">
+			<img id="weather" style="max-height: 230px" src="" alt="погода" />
 		</div>
-		<div style="float: right" class="rightInfo" id="weatherDesc">
-			Небольшой дождь
-		</div>
+		<div style="float: right" class="rightInfo" id="weatherDesc"></div>
 	</div>
 </div>
 <div class="bodyWidget">
@@ -52,6 +35,7 @@
 			<div class="tools">
 				<div style="float: left; margin-left: 50px">
 					<img
+						id="weather-img"
 						class="ico"
 						src="{% static 'images/Icons/humidity.png' %}"
 						alt="Влажность"
@@ -110,26 +94,26 @@
 		<table>
 			<thead>
 				<tr>
-					<th>сейчас</th>
-					<th>17:00</th>
-					<th>20:00</th>
-					<th>23:00</th>
-					<th>2:00</th>
-					<th>5:00</th>
-					<th>8:00</th>
+					<th>00:00</th>
+					<th>03:00</th>
+					<th>06:00</th>
+					<th>09:00</th>
 					<th>12:00</th>
+					<th>15:00</th>
+					<th>18:00</th>
+					<th>21:00</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>8°</td>
-					<td>5°</td>
-					<td>2°</td>
-					<td>0°</td>
-					<td>1°</td>
-					<td>3°</td>
-					<td>6°</td>
-					<td>10°</td>
+					<td id="h0">8°</td>
+					<td id="h1">5°</td>
+					<td id="h2">2°</td>
+					<td id="h3">0°</td>
+					<td id="h4">1°</td>
+					<td id="h5">3°</td>
+					<td id="h6">6°</td>
+					<td id="h7">10°</td>
 				</tr>
 			</tbody>
 		</table>
