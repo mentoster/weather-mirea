@@ -2,7 +2,7 @@ from django.http.response import JsonResponse
 from django.shortcuts import render, redirect
 from .models import todo, todomonth, todoweek
 import time
-import requests
+# import requests
 # def index(request):
 # return render(request, 'tasks/index.json')
 
