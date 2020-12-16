@@ -1,4 +1,6 @@
-{% extends 'tasks/base.html' %} {% block content %} {% load static %}
+{% extends 'tasks/base.html' %} {% block background-image %} {{ backgroundUrl }}
+{% endblock background-image %} {% block content %}
+<!-- {% load static %} -->
 
 <div class="topWidget">
 	<div class="tools">
@@ -9,7 +11,12 @@
 			</div>
 		</div>
 		<div class="center" style="margin-top: -75px">
-			<img id="weather" style="max-height: 230px" src="" alt="погода" />
+			<img
+				id="weatherImg"
+				style="max-height: 230px"
+				alt="weather icon"
+				src="{% static 'images/cold.png' %}"
+			/>
 		</div>
 		<div style="float: right" class="rightInfo" id="weatherDesc"></div>
 	</div>
@@ -23,8 +30,8 @@
 			<span id="NowTime"></span>
 			<p id="NowDate">{{ NowDate }}</p>
 		</div>
-		<div style="float: right" class="rightInfo">
-			Мин <b id="mintempC"></b>° <span style="color: #ffffff30"> | </span> Макс
+		<div style="float: right; margin-right: 30px" class="rightInfo">
+			Мин <b id="mintempC"></b>° <span style="color: #ffffff30">|</span>Maкс
 			<b id="maxtempC"></b>°
 		</div>
 	</div>
@@ -101,7 +108,7 @@
 					<th>12:00</th>
 					<th>15:00</th>
 					<th>18:00</th>
-					<th>21:00</th>
+					<!-- <th>21:00</th> -->
 				</tr>
 			</thead>
 			<tbody>
@@ -113,7 +120,7 @@
 					<td id="h4">1°</td>
 					<td id="h5">3°</td>
 					<td id="h6">6°</td>
-					<td id="h7">10°</td>
+					<!-- <td id="h7">10°</td> -->
 				</tr>
 			</tbody>
 		</table>

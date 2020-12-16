@@ -1,7 +1,8 @@
 var makeItRain = function () {
+	return;
 	//clear out everything
 	$(".rain").empty();
-	document.getElementById("weather").src = "/static/images/cloud.png";
+	// document.getElementById("weather").src = "/static/images/cloud.png";
 	var increment = 0;
 	var drops = "";
 	var backDrops = "";
@@ -15,6 +16,7 @@ var makeItRain = function () {
 		var randoFiver = Math.floor(Math.random() * (5 - 2 + 1) + 2);
 		//increment
 		increment += randoFiver;
+
 		//add in a new raindrop with various randomizations to certain CSS properties
 		drops +=
 			'<div class="drop" style="left: ' +
@@ -58,7 +60,39 @@ var makeItRain = function () {
 	$(".rain.front-row").append(drops);
 	$(".rain.back-row").append(backDrops);
 };
-
+function makeItSnow() {
+	// document.getElementById("weather").src = "/static/images/cold.png";
+}
+function makeItMisty() {
+	// document.getElementById("weather").src = "/static/images/mist.png";
+}
+function makeItClear() {
+	// document.getElementById("weather").src = "/static/images/sun.png";
+}
+function checkWeather(weather) {
+	var weatherDesc = [
+		"туман", // 0
+		"дождь", // 1
+		"пасмурно", // 2
+		"снег", // 3
+		"mist", // 4
+		"rain", // 5
+		"cloudy", // 6
+		"snow", // 7
+	];
+	for (let i = 0; i < weatherDesc.length; i++) {
+		const element = weatherDesc[i];
+		if (weather.includes(element)) {
+			if (i == 0 || i == 4) makeItMisty();
+			else if (i == 1 || i == 5) makeItRain();
+			else if (i == 2 || i == 6) makeItRain();
+			else if (i == 3 || i == 7) makeItSnow();
+			else makeItClear();
+		} else {
+			makeItRain();
+		}
+	}
+}
 function setWeather(day) {
 	/*
 	0 - at this time
@@ -85,6 +119,7 @@ function setWeather(day) {
 		Httpreq.send(null);
 		return Httpreq.responseText;
 	}
+
 	// weather data
 	var json_obj = JSON.parse(Get("https://wttr.in/moscow?format=j1&lang=ru"));
 	// set currentParams
@@ -94,7 +129,9 @@ function setWeather(day) {
 	}
 	// set lang_ru value
 	var element = document.getElementById("weatherDesc");
-	element.innerHTML = json_obj.current_condition[0].lang_ru[0].value;
+	var weather = json_obj.current_condition[0].lang_ru[0].value;
+	checkWeather(weather);
+	element.innerHTML = weather;
 	// set max and min temp
 	for (let i = 0; i < allDayParams.length; i++) {
 		var element = document.getElementById(allDayParams[i]);
@@ -104,8 +141,6 @@ function setWeather(day) {
 		var element = document.getElementById("h" + [i]);
 		element.innerHTML = json_obj.weather[0]["hourly"][i]["DewPointC"] + "°";
 	}
-
-	makeItRain();
 }
 function getCurrentTimeString() {
 	var date2 = new Date();
@@ -117,6 +152,19 @@ function getCurrentTimeString() {
 	return result;
 }
 // start
+//#region menu
+$(document).ready(function () {
+	$(".stih").hide();
+	$(".invisible").hide();
+
+	$(".headerBurger").click(function (event) {
+		$(".headerBurger,.headerMenu, .contents").toggleClass("active");
+		$("body").toggleClass("lock");
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+});
+//#endregion
+
 var timeNode = document.getElementById("NowTime");
 timeNode.innerHTML = getCurrentTimeString();
 $("body").toggleClass("splat-toggle");

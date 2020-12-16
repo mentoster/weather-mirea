@@ -9,4 +9,5 @@ weather = requests.get(url.format("moscow")).json()
 # result = f'Сегодня {temperature} градусов'
 # pprint(weather['nearest_area'])
 # pprint(weather['current_condition'])
-pprint(weather)
+print(weather['current_condition'][0]['weatherDesc'][0]['value']
+      )

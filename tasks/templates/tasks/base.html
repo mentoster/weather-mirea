@@ -13,141 +13,6 @@
 			type="image/png"
 		/>
 		<style>
-			body {
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-size: cover;
-				background-position: top;
-				background-image: url("https://source.unsplash.com/1920x1080?rain");
-				width: 100%;
-				height: 100%;
-				font-family: "Roboto";
-				letter-spacing: 0.02em;
-				font-weight: 400;
-				-webkit-font-smoothing: antialiased;
-			}
-			.white {
-				color: white;
-				text-shadow: 0px 0px 6px rgba(46, 46, 46, 0.7);
-			}
-			.top {
-				display: inline-block;
-			}
-
-			.top p {
-				color: white;
-				font-family: "Roboto";
-				font-size: 150%;
-			}
-			.top-imagine {
-				height: 39px;
-				width: 39px;
-			}
-
-			.white {
-				color: white;
-			}
-
-			.topWidget {
-				background-image: url("{% static 'images/bodyTop.png' %}");
-				margin: auto;
-				margin-bottom: 3px;
-				max-width: 1200px;
-				width: 922px;
-				height: 135px;
-			}
-			.temperature {
-				display: inline;
-				margin-left: 30px;
-				height: 128.17px;
-				color: #fff;
-				font-family: "Roboto Light";
-				font-size: 118px;
-				line-height: 138px;
-				text-align: right;
-			}
-			.C {
-				display: inline;
-				vertical-align: top;
-				color: #eee;
-				font-family: "Roboto";
-				font-size: 29px;
-			}
-			.tools {
-				position: relative;
-			}
-			.center {
-				position: absolute;
-				left: 50%;
-				transform: translate(-50%);
-			}
-			.rightInfo {
-				margin: 25px;
-				width: 220.72px;
-				color: #fff;
-				font-family: "Roboto Light";
-				font-size: 25px;
-				line-height: 29px;
-				text-align: right;
-			}
-
-			.bodyWidget {
-				background-image: url("{% static 'images/body.png' %}");
-				margin: auto;
-				max-width: 1200px;
-				width: 922px;
-				height: 267px;
-				margin-bottom: 3px;
-			}
-			#NowTime {
-				padding-top: 30px;
-				color: #fff;
-				font-family: "Roboto Light";
-				font-size: 161px;
-				line-height: 189px;
-				display: table-cell;
-				vertical-align: middle;
-				text-align: center;
-			}
-			#NowDate {
-				color: rgba(255, 255, 255, 0.486);
-				font-family: "Roboto";
-				font-size: 24px;
-				line-height: 28px;
-				margin-top: -20px;
-			}
-
-			.bottomWidget {
-				background-image: url("{% static 'images/bodybottom.png' %}");
-				margin: auto;
-				max-width: 1200px;
-				width: 922px;
-				height: 166px;
-			}
-			.ico {
-				height: 35px;
-				width: 35px;
-				display: block;
-				margin: auto;
-				margin-top: 10px;
-			}
-			.bottomHeader {
-				color: rgba(255, 255, 255, 0.7);
-				font-family: Roboto;
-				font-size: 18px;
-				line-height: 28px;
-				text-align: center;
-				margin: 0px;
-			}
-			.bottomText {
-				color: rgb(255, 255, 255);
-				font-family: Roboto;
-				font-size: 24px;
-				line-height: 28px;
-				text-align: center;
-				margin-top: 10px;
-			}
-
 			.bottomBottom {
 				background-image: url("{% static 'images/bottomBottom.png' %}");
 				margin: auto;
@@ -156,183 +21,137 @@
 				height: 89px;
 				margin-top: 3px;
 			}
-
-			.bottomBottom table {
+			.bottomWidget {
+				background-image: url("{% static 'images/bodybottom.png' %}");
 				margin: auto;
+				max-width: 1200px;
+				width: 922px;
+				height: 166px;
 			}
-			.bottomBottom th {
-				width: 107px;
-				color: rgba(255, 255, 255, 0.7);
-				font-family: Roboto;
-				font-size: 19px;
-				line-height: 22px;
-				text-align: center;
+			.bodyWidget {
+				background-image: url("{% static 'images/body.png' %}");
+				margin: auto;
+				max-width: 1200px;
+				width: 922px;
+				height: 267px;
+				margin-bottom: 3px;
 			}
-			.bottomBottom td {
-				width: 107px;
-				color: rgba(255, 255, 255, 0.7);
-				font-family: Roboto;
-				font-size: 19px;
-				line-height: 22px;
-				text-align: center;
+			.topWidget {
+				background-image: url("{% static 'images/bodyTop.png' %}");
+				margin: auto;
+				margin-bottom: 3px;
+				max-width: 1200px;
+				width: 922px;
+				height: 135px;
 			}
 
-			.rain {
-				position: absolute;
-				left: 0;
+			body {
+				/* background-image: url("https://source.unsplash.com/1920x1080?rain"); */
+				background-image: url({% block background-image %}{% endblock background-image %});
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: top;
 				width: 100%;
 				height: 100%;
-				z-index: 2;
+				font-family: "Roboto", sans-serif;
+				letter-spacing: 0.02em;
+				font-weight: 400;
+				-webkit-font-smoothing: antialiased;
 			}
-
-			.rain.back-row {
-				display: none;
-				z-index: 1;
-				bottom: 60px;
-				opacity: 0.5;
-			}
-
-			body.back-row-toggle .rain.back-row {
-				display: block;
-			}
-
-			.drop {
+			/* snow */
+			.snowContainer {
+				width: 100%;
+				height: 100%;
 				position: absolute;
-				bottom: 100%;
-				width: 15px;
-				height: 120px;
-				pointer-events: none;
-				animation: drop 0.5s linear infinite;
+				top: 0;
+				left: 0;
+				z-index: -1;
 			}
-
-			@keyframes drop {
+			#snow {
+				width: 100%;
+				height: 100%;
+				background-image: url("{% static 'images/snow/snow_1.png' %}"),
+					url("{% static 'images/snow/snow_2.png' %}"),
+					url("{% static 'images/snow/snow_3.png' %}");
+				-webkit-animation: snow 20s linear infinite;
+				-moz-animation: snow 20s linear infinite;
+				-ms-animation: snow 20s linear infinite;
+				animation: snow 20s linear infinite;
+			}
+			@keyframes snow {
 				0% {
-					transform: translateY(0vh);
-				}
-				75% {
-					transform: translateY(90vh);
+					background-position: 0px 0px, 0px 0px, 0px 0px;
 				}
 				100% {
-					transform: translateY(90vh);
+					background-position: 500px 1000px, 400px 400px, 300px 300px;
 				}
 			}
 
-			.stem {
-				width: 1px;
-				height: 60%;
-				margin-left: 7px;
-				background: linear-gradient(
-					to bottom,
-					rgba(255, 255, 255, 0),
-					rgba(255, 255, 255, 0.25)
-				);
-				animation: stem 0.5s linear infinite;
-			}
-
-			@keyframes stem {
+			@-moz-keyframes snow {
 				0% {
-					opacity: 1;
-				}
-				65% {
-					opacity: 1;
-				}
-				75% {
-					opacity: 0;
+					background-position: 0px 0px, 0px 0px, 0px 0px;
 				}
 				100% {
-					opacity: 0;
+					background-position: 500px 1000px, 400px 400px, 300px 300px;
 				}
 			}
 
-			.splat {
-				width: 15px;
-				height: 10px;
-				border-top: 2px dotted rgba(255, 255, 255, 0.5);
-				border-radius: 50%;
-				opacity: 1;
-				transform: scale(0);
-				animation: splat 0.5s linear infinite;
-				display: none;
-			}
-
-			body.splat-toggle .splat {
-				display: block;
-			}
-
-			@keyframes splat {
+			@-webkit-keyframes snow {
 				0% {
-					opacity: 1;
-					transform: scale(0);
-				}
-				80% {
-					opacity: 1;
-					transform: scale(0);
-				}
-				90% {
-					opacity: 0.5;
-					transform: scale(1);
+					background-position: 0px 0px, 0px 0px, 0px 0px;
 				}
 				100% {
-					opacity: 0;
-					transform: scale(1.5);
+					background-position: 500px 1000px, 400px 400px, 300px 300px;
+				}
+			}
+
+			@-ms-keyframes snow {
+				0% {
+					background-position: 0px 0px, 0px 0px, 0px 0px;
+				}
+				100% {
+					background-position: 500px 1000px, 400px 400px, 300px 300px;
 				}
 			}
 		</style>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		/>
-
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/menu.css' %}" />
 	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarsExample08"
-				aria-controls="navbarsExample08"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
 
-			<div
-				class="collapse navbar-collapse justify-content-md-center"
-				id="navbarsExample08"
-			>
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="#"
-							>Погода в Москве <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">О проекте</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="dropdown08"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-							>Эффекты</a
-						>
-						<div class="dropdown-menu" aria-labelledby="dropdown08">
-							<a class="dropdown-item" href="#">Дождь</a>
-							<a class="dropdown-item" href="#">Туман</a>
-							<a class="dropdown-item" href="#">Снег</a>
-							<a class="dropdown-item" href="#">Ясно</a>
-						</div>
-					</li>
-				</ul>
+	<body>
+		<header class="header">
+			<div class="containers">
+				<div class="headerBody">
+					<a href="#1" class="headerLogo">
+						<img
+							style="height: 30px; weight: 30px"
+							src="{% static 'images/meniIcon.png' %}"
+						/>
+					</a>
+					<div class="headerBurger">
+						<span></span>
+					</div>
+					<nav class="headerMenu">
+						<ul class="headerList">
+							<li>
+								<a href="#1" class="headerLink">Погода на день</a>
+							</li>
+							<li>
+								<a href="#2" class="headerLink">Прогноз на неделю</a>
+							</li>
+							<li>
+								<a href="#3" class="headerLink">Прогноз на месяц</a>
+							</li>
+							<li>
+								<a href="#4" class="headerLink">О сайте</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 			</div>
-		</nav>
-		<div style="margin-top: 100px">
+		</header>
+		<div style="margin-top: 120px">
 			{% block content %} {% endblock content %}
 		</div>
 		<div class="rain back-row"></div>
@@ -340,5 +159,10 @@
 		<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<script src="{% static 'scripts/script.js' %}"></script>
+		<script src="{% static 'scripts/menu.js' %}"></script>
+		<script src="{% static 'scripts/modernizr.js' %}"></script>
+		<div class="snowContainer">
+			<div id="snow"></div>
+		</div>
 	</body>
 </html>
