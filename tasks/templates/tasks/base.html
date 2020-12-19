@@ -6,7 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Сайт по погоде для МИРЭА</title>
 		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% block head %} {% endblock head %}
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
 		<link
 			rel="shortcut icon"
 			href="https://cdn6.aptoide.com/imgs/d/4/9/d4954b208b7d3a5a60861cd937e54d03_icon.png"
@@ -116,14 +117,14 @@
 			}
 		</style>
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-		<link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+
 	</head>
 
 	<body>
 		<header class="header">
 			<div class="containers">
 				<div class="headerBody">
-					<a href="#1" class="headerLogo">
+					<a href="{% url "index" %}" class="headerLogo">
 						<img
 							style="height: 30px; weight: 30px"
 							src="{% static 'images/meniIcon.png' %}"
@@ -135,25 +136,32 @@
 					<nav class="headerMenu">
 						<ul class="headerList">
 							<li>
-								<a href="#1" class="headerLink">Погода на день</a>
+								<a href="{% url "index" %}" class="headerLink">Погода на день</a>
 							</li>
 							<li>
-								<a href="#2" class="headerLink">Прогноз на неделю</a>
+								<a href="{% url "onWeek" %}"  class="headerLink">Прогноз на 14д</a>
 							</li>
 							<li>
-								<a href="#3" class="headerLink">Прогноз на месяц</a>
+								<a href="{% url "onMonth" %}"  class="headerLink">Прогноз на месяц</a>
 							</li>
 							<li>
-								<a href="#4" class="headerLink">О сайте</a>
+								<a href="{% url "aboutUs" %}" class="headerLink">О сайте</a>
+							</li>
+							<li>
+								<a href="{% url "userComment" %}"  class="headerLink">Оставьте отзыв</a>
 							</li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</header>
+		<div class="snowContainer">
+			<div id="snow"></div>
+		</div>
 		<div style="margin-top: 120px">
 			{% block content %} {% endblock content %}
 		</div>
+
 		<div class="rain back-row"></div>
 		<div class="rain front-row"></div>
 		<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
@@ -161,8 +169,6 @@
 		<script src="{% static 'scripts/script.js' %}"></script>
 		<script src="{% static 'scripts/menu.js' %}"></script>
 		<script src="{% static 'scripts/modernizr.js' %}"></script>
-		<div class="snowContainer">
-			<div id="snow"></div>
-		</div>
+
 	</body>
 </html>

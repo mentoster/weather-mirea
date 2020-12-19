@@ -26,3 +26,31 @@ def index(request):
         "backgroundUrl": "https://source.unsplash.com/1920x1080?"+"snow"
     }
     return render(request, 'tasks/index.html', context)
+
+
+def aboutUs(request):
+    context = {
+        "backgroundUrl": "https://source.unsplash.com/1920x1080?"+"snow"
+    }
+    return render(request, 'tasks/aboutUs.html', context)
+
+
+def onWeek(request):
+    context = {
+        "backgroundUrl": "https://source.unsplash.com/1920x1080?"+"snow"
+    }
+    return render(request, 'tasks/onWeek.html', context)
+
+
+def onMonth(request):
+    context = {
+        "backgroundUrl": "https://source.unsplash.com/1920x1080?"+"snow"
+    }
+    return render(request, 'tasks/onMonth.html', context)
+
+
+def userComment(request):
+    context = {
+        "backgroundUrl": "https://source.unsplash.com/1920x1080?"+"snow"
+    }
+    return render(request, 'tasks/userComment.html', context)

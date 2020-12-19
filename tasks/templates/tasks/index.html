@@ -1,133 +1,134 @@
 {% extends 'tasks/base.html' %} {% block background-image %} {{ backgroundUrl }}
 {% endblock background-image %} {% block content %}
 <!-- {% load static %} -->
-
-<div class="topWidget">
-	<div class="tools">
-		<div style="float: left">
-			<div class="top">
-				<div class="temperature" id="temp_C"></div>
-				<div class="C">°C</div>
-			</div>
-		</div>
-		<div class="center" style="margin-top: -75px">
-			<img
-				id="weatherImg"
-				style="max-height: 230px"
-				alt="weather icon"
-				src="{% static 'images/cold.png' %}"
-			/>
-		</div>
-		<div style="float: right" class="rightInfo" id="weatherDesc"></div>
-	</div>
-</div>
-<div class="bodyWidget">
-	<div class="tools">
-		<div style="float: left" class="rightInfo">
-			По ощущениям <b id="FeelsLikeC"></b>°
-		</div>
-		<div class="center">
-			<span id="NowTime"></span>
-			<p id="NowDate">{{ NowDate }}</p>
-		</div>
-		<div style="float: right; margin-right: 30px" class="rightInfo">
-			Мин <b id="mintempC"></b>° <span style="color: #ffffff30">|</span>Maкс
-			<b id="maxtempC"></b>°
-		</div>
-	</div>
-</div>
-<div class="bottomWidget">
-	<div class="tools">
-		<div style="float: left">
-			<div class="tools">
-				<div style="float: left; margin-left: 50px">
-					<img
-						id="weather-img"
-						class="ico"
-						src="{% static 'images/Icons/humidity.png' %}"
-						alt="Влажность"
-					/>
-					<p class="bottomHeader">Влажность</p>
-					<p class="bottomText"><b id="humidity"></b>%</p>
-				</div>
-				<div style="float: right; margin-left: 50px">
-					<img
-						class="ico"
-						src="{% static 'images/Icons/umbrella.png' %}"
-						alt="Осадки"
-					/>
-					<p class="bottomHeader">Осадки</p>
-					<p class="bottomText"><b id="precipMM"></b> мм</p>
+<div id="weatherBlock">
+	<div class="topWidget">
+		<div class="tools">
+			<div style="float: left">
+				<div class="top">
+					<div class="temperature" id="temp_C"></div>
+					<div class="C">°C</div>
 				</div>
 			</div>
+			<div class="center" style="margin-top: -75px">
+				<img
+					id="weatherImg"
+					style="max-height: 230px"
+					alt="weather icon"
+					src="{% static 'images/cold.png' %}"
+				/>
+			</div>
+			<div style="float: right" class="rightInfo" id="weatherDesc"></div>
 		</div>
-		<div class="center" style="margin-left: -12px; margin-top: 23px">
-			<div>
-				<img src="{% static 'images/compassBackground.png' %}" alt="" />
-				<div style="position: relative; margin-top: -118px; margin-left: 2px">
-					<div>
-						<img src="{% static 'images/compass.png' %}" alt="" />
+	</div>
+	<div class="bodyWidget">
+		<div class="tools">
+			<div style="float: left" class="rightInfo">
+				По ощущениям <b id="FeelsLikeC"></b>°
+			</div>
+			<div class="center">
+				<span id="NowTime"></span>
+				<p id="NowDate">{{ NowDate }}</p>
+			</div>
+			<div style="float: right; margin-right: 30px" class="rightInfo">
+				Мин <b id="mintempC"></b>° <span style="color: #ffffff30">|</span>Maкс
+				<b id="maxtempC"></b>°
+			</div>
+		</div>
+	</div>
+	<div class="bottomWidget">
+		<div class="tools">
+			<div style="float: left">
+				<div class="tools">
+					<div style="float: left; margin-left: 50px">
+						<img
+							id="weather-img"
+							class="ico"
+							src="{% static 'images/Icons/humidity.png' %}"
+							alt="Влажность"
+						/>
+						<p class="bottomHeader">Влажность</p>
+						<p class="bottomText"><b id="humidity"></b>%</p>
+					</div>
+					<div style="float: right; margin-left: 50px">
+						<img
+							class="ico"
+							src="{% static 'images/Icons/umbrella.png' %}"
+							alt="Осадки"
+						/>
+						<p class="bottomHeader">Осадки</p>
+						<p class="bottomText"><b id="precipMM"></b> мм</p>
+					</div>
+				</div>
+			</div>
+			<div class="center" style="margin-left: -12px; margin-top: 23px">
+				<div>
+					<img src="{% static 'images/compassBackground.png' %}" alt="" />
+					<div style="position: relative; margin-top: -118px; margin-left: 2px">
+						<div>
+							<img src="{% static 'images/compass.png' %}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="float: right">
+				<div class="tools">
+					<div style="float: left; margin-right: 50px">
+						<img
+							class="ico"
+							src="{% static 'images/Icons/thermometer.png' %}"
+							alt="Давление"
+						/>
+						<p class="bottomHeader">Давление</p>
+						<p class="bottomText"><b id="pressure"></b> мм</p>
+					</div>
+					<div style="float: right; margin-right: 50px">
+						<img
+							class="ico"
+							src="{% static 'images/Icons/eye.png' %}"
+							alt="Видимость"
+						/>
+						<p class="bottomHeader">Видимость</p>
+						<p class="bottomText"><b id="visibility"></b> км</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div style="float: right">
-			<div class="tools">
-				<div style="float: left; margin-right: 50px">
-					<img
-						class="ico"
-						src="{% static 'images/Icons/thermometer.png' %}"
-						alt="Давление"
-					/>
-					<p class="bottomHeader">Давление</p>
-					<p class="bottomText"><b id="pressure"></b> мм</p>
-				</div>
-				<div style="float: right; margin-right: 50px">
-					<img
-						class="ico"
-						src="{% static 'images/Icons/eye.png' %}"
-						alt="Видимость"
-					/>
-					<p class="bottomHeader">Видимость</p>
-					<p class="bottomText"><b id="visibility"></b> км</p>
-				</div>
-			</div>
+	</div>
+	<div class="bottomBottom">
+		<br />
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>00:00</th>
+						<th>03:00</th>
+						<th>06:00</th>
+						<th>09:00</th>
+						<th>12:00</th>
+						<th>15:00</th>
+						<th>18:00</th>
+						<!-- <th>21:00</th> -->
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="h0">8°</td>
+						<td id="h1">5°</td>
+						<td id="h2">2°</td>
+						<td id="h3">0°</td>
+						<td id="h4">1°</td>
+						<td id="h5">3°</td>
+						<td id="h6">6°</td>
+						<!-- <td id="h7">10°</td> -->
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
+	<!-- rain -->
+	<div class="rain front-row"></div>
+	<div class="rain back-row"></div>
+	<!--  -->
 </div>
-<div class="bottomBottom">
-	<br />
-	<div>
-		<table>
-			<thead>
-				<tr>
-					<th>00:00</th>
-					<th>03:00</th>
-					<th>06:00</th>
-					<th>09:00</th>
-					<th>12:00</th>
-					<th>15:00</th>
-					<th>18:00</th>
-					<!-- <th>21:00</th> -->
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td id="h0">8°</td>
-					<td id="h1">5°</td>
-					<td id="h2">2°</td>
-					<td id="h3">0°</td>
-					<td id="h4">1°</td>
-					<td id="h5">3°</td>
-					<td id="h6">6°</td>
-					<!-- <td id="h7">10°</td> -->
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-<!-- rain -->
-<div class="rain front-row"></div>
-<div class="rain back-row"></div>
-<!--  -->
 {% endblock content %}

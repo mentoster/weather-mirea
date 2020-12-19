@@ -249,20 +249,21 @@ body.splat-toggle .splat {
 	align-items: center;
 }
 .headerLogo {
-	flex: 0 0 200px;
+	flex: 0 0 0px;
 	overflow: hidden;
 	position: relative;
 	z-index: 3;
 }
 .headerLogo img {
 	max-width: 50%;
-	display: block;
+	/* display: block; */
 }
 .headerBurger {
-	display: none;
+	display: block;
 }
 
 .headerList {
+	margin-left: -60px;
 	display: flex;
 	position: relative;
 	z-index: 2;
@@ -272,9 +273,21 @@ body.splat-toggle .splat {
 	margin: 0px 0px 0px 20px;
 }
 .headerLink {
-	color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255)!important;
 	text-transform: uppercase;
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: 900;
 	text-decoration: none;
+}
+
+.headerList {
+	margin-left: -60px;
+}
+
+#weatherBlock {
+	width: 1000px;
+	position: absolute;
+	left: 50%;
+	margin-left: -500px;
+	top: 30%;
 }

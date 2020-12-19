@@ -1,0 +1,785 @@
+{% extends 'tasks/base.html' %} {% load static %}{% block head %}
+<link rel="stylesheet" href="{% static 'css/week.css' %}" />
+<link rel="stylesheet" href="https://world-weather.ru/css/main-ru-v56.css?v=25" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{%endblock head %} {% block content %}
+<div class="glass">
+   <h1 class="white">Погода в Москве на 14 дней</h1>
+   <p class="white">Подробный прогноз погоды в Москве на 14 дней, точные данные о температуре воздуха, облачности, осадках, давлении, силе и направлении ветра.</p>
+
+   <h2 class="white">Прогноз погоды  на 14 дней</h2>
+   <span id="shortCss"></span>
+   <table class="weather-today" id="weatherTabTop">
+      <tbody>
+         <tr>
+            <td id="weather-day"> <b class="white"> День </b></td>
+            <td id="weather-temperature"><b class="white"> Атмосферные явления<br>температура °C</td></b>
+            <td id="weather-feeling"><b class="white">  Ощущается<br>как °C</td></b>
+            <td id="weather-probability"><b class="white"> Вероятность<br>осадков %</td></b>
+            <td id="weather-pressure">   <b class="white"> Давление<br>мм рт. ст.</td></b>
+            <td id="weather-wind">       <b class="white"> Скорость<br>ветра м/с</td></b>
+            <td id="weather-humidity">   <b class="white"> Влажность<br>воздуха</td></b>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2020-12-18"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Пятница </b> </span><b class="white">, 18 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>0°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -5°</b></td>
+               <td class="weather-probability "> <b class="white"> 19%</b></td>
+               <td class="weather-pressure "><b class="white"> 753</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 16.9 км/ч" class="tooltip "><b class="white"> 4.7</b></span></td>
+               <td class="weather-humidity "><b class="white"> 87%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-3°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -3°</b></td>
+               <td class="weather-probability "> <b class="white"> 6%</b></td>
+               <td class="weather-pressure "><b class="white"> 756</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 4 км/ч" class="tooltip "><b class="white"> 1.1</b></span></td>
+               <td class="weather-humidity "><b class="white"> 93%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-19"></a>
+   <div class="weather-shorted">
+      <div class="dates  short-d"><span><b class="white"> Суббота </b> </span><b class="white">, 19 декабря</b></div>
+      <table class="weather-today short">
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -10°</b></td>
+               <td class="weather-probability "> <b class="white"> 60%</b></td>
+               <td class="weather-pressure "><b class="white"> 757</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 16.2 км/ч" class="tooltip "><b class="white"> 4.5</b></span></td>
+               <td class="weather-humidity "><b class="white"> 88%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -10°</b></td>
+               <td class="weather-probability "> <b class="white"> 76%</b></td>
+               <td class="weather-pressure "><b class="white"> 756</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 15.8 км/ч" class="tooltip "><b class="white"> 4.4</b></span></td>
+               <td class="weather-humidity "><b class="white"> 94%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-20"></a>
+   <div class="weather-shorted">
+      <div class="dates  short-d"><span><b class="white"> Воскресенье </b> </span><b class="white">, 20 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -9°</b></td>
+               <td class="weather-probability "> <b class="white"> 13%</b></td>
+               <td class="weather-pressure "><b class="white"> 758</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 13.7 км/ч" class="tooltip "><b class="white"> 3.8</b></span></td>
+               <td class="weather-humidity "><b class="white"> 92%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-3°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -7°</b></td>
+               <td class="weather-probability "> <b class="white"> 18%</b></td>
+               <td class="weather-pressure "><b class="white"> 759</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 12.6 км/ч" class="tooltip "><b class="white"> 3.5</b></span></td>
+               <td class="weather-humidity "><b class="white"> 96%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-21"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Понедельник </b> </span><b class="white">, 21 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-1°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -6°</b></td>
+               <td class="weather-probability "> <b class="white"> 5%</b></td>
+               <td class="weather-pressure "><b class="white"> 761</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 13.3 км/ч" class="tooltip "><b class="white"> 3.7</b></span></td>
+               <td class="weather-humidity "><b class="white"> 96%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-2°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -7°</b></td>
+               <td class="weather-probability "> <b class="white"> 6%</b></td>
+               <td class="weather-pressure "><b class="white"> 761</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 14.4 км/ч" class="tooltip "><b class="white"> 4.0</b></span></td>
+               <td class="weather-humidity "><b class="white"> 98%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-22"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Вторник </b> </span><b class="white">, 22 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-3°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -9°</b></td>
+               <td class="weather-probability "> <b class="white"> 2%</b></td>
+               <td class="weather-pressure "><b class="white"> 760</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 16.6 км/ч" class="tooltip "><b class="white"> 4.6</b></span></td>
+               <td class="weather-humidity "><b class="white"> 92%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d300 tooltip" title="Преимущественно облачно"></div>
+				  <b class="white">
+					  <span>-6°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -12°</b></td>
+               <td class="weather-probability"><b class="white"> <b class="white"> 2%</b></td>
+               <td class="weather-pressure "><b class="white"> 758</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 14 км/ч" class="tooltip "><b class="white"> 3.9</b></span></td>
+               <td class="weather-humidity "><b class="white"> 90%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-23"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Среда </b> </span><b class="white">, 23 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n300 tooltip" title="Преимущественно облачно"></div>
+				  <b class="white">
+					  <span>-5°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -10°</b></td>
+               <td class="weather-probability "> <b class="white"> 20%</b></td>
+               <td class="weather-pressure "><b class="white"> 756</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 16.2 км/ч" class="tooltip "><b class="white"> 4.5</b></span></td>
+               <td class="weather-humidity "><b class="white"> 90%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-7°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -13°</b></td>
+               <td class="weather-probability "> <b class="white"> 25%</b></td>
+               <td class="weather-pressure "><b class="white"> 755</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 16.2 км/ч" class="tooltip "><b class="white"> 4.5</b></span></td>
+               <td class="weather-humidity "><b class="white"> 88%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-24"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Четверг </b> </span><b class="white">, 24 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-6°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -12°</b></td>
+               <td class="weather-probability "> <b class="white"> 66%</b></td>
+               <td class="weather-pressure "><b class="white"> 754</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 14.8 км/ч" class="tooltip "><b class="white"> 4.1</b></span></td>
+               <td class="weather-humidity "><b class="white"> 86%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -10°</b></td>
+               <td class="weather-probability "> <b class="white"> 69%</b></td>
+               <td class="weather-pressure "><b class="white"> 750</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 15.8 км/ч" class="tooltip "><b class="white"> 4.4</b></span></td>
+               <td class="weather-humidity "><b class="white"> 91%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-25"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Пятница </b> </span><b class="white">, 25 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-3°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -8°</b></td>
+               <td class="weather-probability "> <b class="white"> 74%</b></td>
+               <td class="weather-pressure "><b class="white"> 745</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 17.3 км/ч" class="tooltip "><b class="white"> 4.8</b></span></td>
+               <td class="weather-humidity "><b class="white"> 87%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-3°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -8°</b></td>
+               <td class="weather-probability "> <b class="white"> 82%</b></td>
+               <td class="weather-pressure "><b class="white"> 741</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 15.1 км/ч" class="tooltip "><b class="white"> 4.2</b></span></td>
+               <td class="weather-humidity "><b class="white"> 94%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-26"></a>
+   <div class="weather-shorted">
+      <div class="dates  short-d"><span><b class="white"> Суббота </b> </span><b class="white">, 26 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-2°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -7°</b></td>
+               <td class="weather-probability "> <b class="white"> 82%</b></td>
+               <td class="weather-pressure "><b class="white"> 740</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 13.7 км/ч" class="tooltip "><b class="white"> 3.8</b></span></td>
+               <td class="weather-humidity "><b class="white"> 95%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-3°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -7°</b></td>
+               <td class="weather-probability "> <b class="white"> 77%</b></td>
+               <td class="weather-pressure "><b class="white"> 741</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 12.6 км/ч" class="tooltip "><b class="white"> 3.5</b></span></td>
+               <td class="weather-humidity "><b class="white"> 97%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-27"></a>
+   <div class="weather-shorted">
+      <div class="dates  short-d"><span><b class="white"> Воскресенье </b> </span><b class="white">, 27 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -9°</b></td>
+               <td class="weather-probability "> <b class="white"> 61%</b></td>
+               <td class="weather-pressure "><b class="white"> 745</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 12.2 км/ч" class="tooltip "><b class="white"> 3.4</b></span></td>
+               <td class="weather-humidity "><b class="white"> 90%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d412 tooltip" title="Облачно и слабый снег"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -9°</b></td>
+               <td class="weather-probability "> <b class="white"> 66%</b></td>
+               <td class="weather-pressure "><b class="white"> 746</b></td>
+               <td class="weather-wind ">
+				   </span> <span title=" 11.5 км/ч" class="tooltip "><b class="white"> 3.2</b></span></td>
+               <td class="weather-humidity "><b class="white"> 93%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-28"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Понедельник </b> </span><b class="white">, 28 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -10°</b></td>
+               <td class="weather-probability "> <b class="white"> 55%</b></td>
+               <td class="weather-pressure "><b class="white"> 748</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 13.3 км/ч" class="tooltip "><b class="white"> 3.7</b></span></td>
+               <td class="weather-humidity "><b class="white"> 92%</b></td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-5°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><b class="white"> -10°</b></td>
+               <td class="weather-probability "> <b class="white"> 48%</b></td>
+               <td class="weather-pressure "><b class="white"> 749</b></td>
+               <td class="weather-wind ">
+
+				   </span> <span title=" 14 км/ч" class="tooltip "><b class="white"> 3.9</b></span></td>
+               <td class="weather-humidity "><b class="white"> 94%</b></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-29"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Вторник </b> </span><b class="white">, 29 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-5°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><div title="нет данных" class="nd tooltip"></div>
+               </td class="white">
+</b>                <td class="weather-probability"><b class="white"> 53%</b></td>
+               <td class="weather-pressure sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+               <td class="weather-wind sh-n">
+
+				   </span> <span title=" 15.8 км/ч" class="tooltip "><b class="white"> 4.4</b></span></td>
+               <td class="weather-humidity sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><div title="нет данных" class="nd tooltip"></div>
+               </td class="white">
+</b>                <td class="weather-probability"><b class="white"> 53%</b></td>
+               <td class="weather-pressure sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+               <td class="weather-wind sh-n">
+
+				   </span> <span title=" 15.8 км/ч" class="tooltip "><b class="white"> 4.4</b></span></td>
+               <td class="weather-humidity sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-30"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Среда </b> </span><b class="white">, 30 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-5°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><div title="нет данных" class="nd tooltip"></div>
+               </td class="white">
+</b>                <td class="weather-probability"><b class="white"> 52%</b></td>
+               <td class="weather-pressure sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+               <td class="weather-wind sh-n">
+
+				   </span> <span title=" 15.1 км/ч" class="tooltip "><b class="white"> 4.2</b></span></td>
+               <td class="weather-humidity sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-2°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><div title="нет данных" class="nd tooltip"></div>
+               </td class="white">
+</b>                <td class="weather-probability"><b class="white"> 52%</b></td>
+               <td class="weather-pressure sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+               <td class="weather-wind sh-n">
+
+				   </span> <span title=" 15.1 км/ч" class="tooltip "><b class="white"> 4.2</b></span></td>
+               <td class="weather-humidity sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <a name="2020-12-31"></a>
+   <div class="weather-shorted">
+      <div class=" sclass="dates  short-d"><span><b class="white"><span>Четверг </b> </span><b class="white">, 31 декабря</b></div>
+      <table class="weather-today short">
+         <tbody>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  Ночь</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v n400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-4°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><div title="нет данных" class="nd tooltip"></div>
+               </td class="white">
+</b>                <td class="weather-probability"><b class="white"> 50%</b></td>
+               <td class="weather-pressure sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+               <td class="weather-wind sh-n">
+				   </span> <span title=" 14 км/ч" class="tooltip "><b class="white"> 3.9</b></span></td>
+               <td class="weather-humidity sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+            </tr>
+            <tr class="table1">
+               <td class="weather-day"> <b class="white">  День</b></td>
+               <td class="weather-temperature">
+				  <div class="wi wi-v d400 tooltip" title="Облачно"></div>
+				  <b class="white">
+					  <span>-2°</span>
+					</b>
+               </td>
+               <td class="weather-feeling"><div title="нет данных" class="nd tooltip"></div>
+               </td class="white">
+</b>                <td class="weather-probability"><b class="white"> 50%</b></td>
+               <td class="weather-pressure sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+               <td class="weather-wind sh-n">
+				   </span> <span title=" 14 км/ч" class="tooltip "><b class="white"> 3.9</b></span></td>
+               <td class="weather-humidity sh-n">
+                  <div title="нет данных" class="nd tooltip"></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="clear"></div>
+   <div class="ww-cont-c-ban">
+      <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3327324140785610" data-ad-slot="7015394484"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+   </div>
+   <div id="defSet-3" data-days="Пт 18.12,Сб 19.12,Вс 20.12,Пн 21.12,Вт 22.12,Ср 23.12,Чт 24.12,Пт 25.12,Сб 26.12,Вс 27.12,Пн 28.12,Вт 29.12,Ср 30.12,Чт 31.12" data-tn="0, -4, -4, -1, -3, -5, -6, -3, -2, -4, -4, -5, -5, -4" data-td="-3, -4, -3, -2, -6, -7, -4, -3, -3, -4, -5, -4, -2, -2" data-n1="День" data-n2="Ночь">
+      <em class="defSet-close" data-block-num="3"></em>
+      <h2 class="day-night-city">Температура в Москве  на 14 дней</h2>
+      <div id="day-night-graphic" data-highcharts-chart="0" style="overflow: hidden;">
+         <div id="highcharts-vy8gzkz-0" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 796px; height: 250px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="796" height="250" viewBox="0 0 796 250">
+               <desc>Created with Highcharts 7.1.2</desc>
+               <defs>
+                  <clipPath id="highcharts-vy8gzkz-1-">
+                     <rect x="0" y="0" width="637" height="140" fill="none"></rect>
+                  </clipPath>
+               </defs>
+               <rect fill="#f4f9fd" class="highcharts-background" x="0" y="0" width="796" height="250" rx="0" ry="0"></rect>
+               <rect fill="none" class="highcharts-plot-background" x="68" y="42" width="637" height="140"></rect>
+               <g class="highcharts-plot-lines-0" data-z-index="0">
+                  <path fill="none" class="highcharts-plot-line " stroke="#808080" stroke-width="1" d="M 68 42.5 L 705 42.5"></path>
+               </g>
+               <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 113.5 42 L 113.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 158.5 42 L 158.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 204.5 42 L 204.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 249.5 42 L 249.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 295.5 42 L 295.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 340.5 42 L 340.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 386.5 42 L 386.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 431.5 42 L 431.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 477.5 42 L 477.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 522.5 42 L 522.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 568.5 42 L 568.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 613.5 42 L 613.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 659.5 42 L 659.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 704.5 42 L 704.5 182" opacity="1"></path>
+                  <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 67.5 42 L 67.5 182" opacity="1"></path>
+               </g>
+               <g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
+                  <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 182.5 L 705 182.5" opacity="1"></path>
+                  <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 112.5 L 705 112.5" opacity="1"></path>
+                  <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 68 41.5 L 705 41.5" opacity="1"></path>
+               </g>
+               <rect fill="none" class="highcharts-plot-border" data-z-index="1" x="68" y="42" width="637" height="140"></rect>
+               <g class="highcharts-axis highcharts-xaxis" data-z-index="2">
+                  <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 68 182.5 L 705 182.5"></path>
+               </g>
+               <g class="highcharts-axis highcharts-yaxis" data-z-index="2">
+                  <text x="22.671875" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 22.671875 112)" class="highcharts-axis-title" style="color:#818181;font-family:Tahoma;font-size:11px;fill:#818181;" y="112">
+                     <tspan>Температура (°C)</tspan>
+                  </text>
+                  <path fill="none" class="highcharts-axis-line" data-z-index="7" d="M 68 42 L 68 182"></path>
+               </g>
+               <g class="highcharts-series-group" data-z-index="3">
+                  <g data-z-index="0.1" class="highcharts-series highcharts-series-0 highcharts-line-series " transform="translate(68,42) scale(1 1)" clip-path="url(#highcharts-vy8gzkz-1-)">
+                     <path fill="none" d="M 22.75 42 L 68.25 56 L 113.75 42 L 159.25 28 L 204.75 84 L 250.25 98 L 295.75 56 L 341.25 42 L 386.75 42 L 432.25 56 L 477.75 70 L 523.25 56 L 568.75 28 L 614.25 28" class="highcharts-graph" data-z-index="1" stroke="#ffa200" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                     <path fill="none" d="M 12.75 42 L 22.75 42 L 68.25 56 L 113.75 42 L 159.25 28 L 204.75 84 L 250.25 98 L 295.75 56 L 341.25 42 L 386.75 42 L 432.25 56 L 477.75 70 L 523.25 56 L 568.75 28 L 614.25 28 L 624.25 28" visibility="visible" data-z-index="2" class="highcharts-tracker-line" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22"></path>
+                  </g>
+                  <g data-z-index="0.1" class="highcharts-markers highcharts-series-0 highcharts-line-series  highcharts-tracker" transform="translate(68,42) scale(1 1)">
+                     <path fill="#ffa200" d="M 22 46 A 4 4 0 1 1 22.003999999333335 45.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 68 60 A 4 4 0 1 1 68.00399999933333 59.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 113 46 A 4 4 0 1 1 113.00399999933333 45.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 159 32 A 4 4 0 1 1 159.00399999933333 31.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 204 88 A 4 4 0 1 1 204.00399999933333 87.99999800000016 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 250 102 A 4 4 0 1 1 250.00399999933333 101.99999800000016 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 295 60 A 4 4 0 1 1 295.00399999933336 59.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 341 46 A 4 4 0 1 1 341.00399999933336 45.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 386 46 A 4 4 0 1 1 386.00399999933336 45.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 432 60 A 4 4 0 1 1 432.00399999933336 59.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 477 74 A 4 4 0 1 1 477.00399999933336 73.99999800000016 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 523 60 A 4 4 0 1 1 523.0039999993334 59.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 568 32 A 4 4 0 1 1 568.0039999993334 31.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#ffa200" d="M 614 32 A 4 4 0 1 1 614.0039999993334 31.99999800000017 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                  </g>
+                  <g data-z-index="0.1" class="highcharts-series highcharts-series-1 highcharts-line-series " transform="translate(68,42) scale(1 1)" clip-path="url(#highcharts-vy8gzkz-1-)">
+                     <path fill="none" d="M 22.75 0 L 68.25 56 L 113.75 56 L 159.25 14 L 204.75 42 L 250.25 70 L 295.75 84 L 341.25 42 L 386.75 28 L 432.25 56 L 477.75 56 L 523.25 70 L 568.75 70 L 614.25 56" class="highcharts-graph" data-z-index="1" stroke="#005fd8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                     <path fill="none" d="M 12.75 0 L 22.75 0 L 68.25 56 L 113.75 56 L 159.25 14 L 204.75 42 L 250.25 70 L 295.75 84 L 341.25 42 L 386.75 28 L 432.25 56 L 477.75 56 L 523.25 70 L 568.75 70 L 614.25 56 L 624.25 56" visibility="visible" data-z-index="2" class="highcharts-tracker-line" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22"></path>
+                  </g>
+                  <g data-z-index="0.1" class="highcharts-markers highcharts-series-1 highcharts-line-series  highcharts-tracker" transform="translate(68,42) scale(1 1)">
+                     <path fill="#005fd8" d="M 22 -4 L 26 0 22 4 18 0 Z" opacity="1" class="highcharts-point"></path>
+                     <path fill="#005fd8" d="M 68 52 L 72 56 68 60 64 56 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 113 52 L 117 56 113 60 109 56 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 159 10 L 163 14 159 18 155 14 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 204 38 L 208 42 204 46 200 42 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 250 66 L 254 70 250 74 246 70 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 295 80 L 299 84 295 88 291 84 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 341 38 L 345 42 341 46 337 42 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 386 24 L 390 28 386 32 382 28 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 432 52 L 436 56 432 60 428 56 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 477 52 L 481 56 477 60 473 56 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 523 66 L 527 70 523 74 519 70 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 568 66 L 572 70 568 74 564 70 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                     <path fill="#005fd8" d="M 614 52 L 618 56 614 60 610 56 Z" opacity="1" class="highcharts-point highcharts-negative"></path>
+                  </g>
+               </g>
+               <text x="378" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color:#f4f9fd;font-size:16px;font-family:Arial;fill:#f4f9fd;" y="22">
+                  <tspan>.</tspan>
+               </text>
+               <text x="378" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color:#666666;fill:#666666;" y="41"></text>
+               <g class="highcharts-legend" data-z-index="7" transform="translate(717,103)">
+                  <rect fill="#fff" class="highcharts-legend-box" rx="6" ry="6" stroke="#b7b9b9" stroke-width="1" x="0.5" y="0.5" width="67" height="38" visibility="visible"></rect>
+                  <g data-z-index="1">
+                     <g>
+                        <g class="highcharts-legend-item highcharts-line-series highcharts-color-undefined highcharts-series-0" data-z-index="1" transform="translate(8,3)">
+                           <path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#ffa200" stroke-width="2"></path>
+                           <path fill="#ffa200" d="M 8 15 A 4 4 0 1 1 8.003999999333336 14.999998000000167 Z" class="highcharts-point" opacity="1"></path>
+                           <text x="21" style="color:#000000;cursor:pointer;font-size:12px;font-weight:bold;font-family:Arial;fill:#000000;" text-anchor="start" data-z-index="2" y="15">
+                              <tspan>День</tspan>
+                           </text>
+                        </g>
+                        <g class="highcharts-legend-item highcharts-line-series highcharts-color-undefined highcharts-series-1" data-z-index="1" transform="translate(8,17)">
+                           <path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#005fd8" stroke-width="2"></path>
+                           <path fill="#005fd8" d="M 8 7 L 12 11 8 15 4 11 Z" class="highcharts-point" opacity="1"></path>
+                           <text x="21" y="15" style="color:#000000;cursor:pointer;font-size:12px;font-weight:bold;font-family:Arial;fill:#000000;" text-anchor="start" data-z-index="2">
+                              <tspan>Ночь</tspan>
+                           </text>
+                        </g>
+                     </g>
+                  </g>
+               </g>
+               <g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7">
+                  <text x="93.34272486435067" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 93.34272486435067 198)" y="198" opacity="1">
+                     <tspan>Пт 18.12</tspan>
+                  </text>
+                  <text x="138.84272486435069" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 138.84272486435069 198)" y="198" opacity="1">
+                     <tspan>Сб 19.12</tspan>
+                  </text>
+                  <text x="184.34272486435069" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 184.34272486435069 198)" y="198" opacity="1">
+                     <tspan>Вс 20.12</tspan>
+                  </text>
+                  <text x="229.84272486435069" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 229.84272486435069 198)" y="198" opacity="1">
+                     <tspan>Пн 21.12</tspan>
+                  </text>
+                  <text x="275.34272486435066" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 275.34272486435066 198)" y="198" opacity="1">
+                     <tspan>Вт 22.12</tspan>
+                  </text>
+                  <text x="320.84272486435066" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 320.84272486435066 198)" y="198" opacity="1">
+                     <tspan>Ср 23.12</tspan>
+                  </text>
+                  <text x="366.34272486435066" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 366.34272486435066 198)" y="198" opacity="1">
+                     <tspan>Чт 24.12</tspan>
+                  </text>
+                  <text x="411.84272486435066" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 411.84272486435066 198)" y="198" opacity="1">
+                     <tspan>Пт 25.12</tspan>
+                  </text>
+                  <text x="457.34272486435066" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 457.34272486435066 198)" y="198" opacity="1">
+                     <tspan>Сб 26.12</tspan>
+                  </text>
+                  <text x="502.84272486435066" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 502.84272486435066 198)" y="198" opacity="1">
+                     <tspan>Вс 27.12</tspan>
+                  </text>
+                  <text x="548.3427248643507" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 548.3427248643507 198)" y="198" opacity="1">
+                     <tspan>Пн 28.12</tspan>
+                  </text>
+                  <text x="593.8427248643507" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 593.8427248643507 198)" y="198" opacity="1">
+                     <tspan>Вт 29.12</tspan>
+                  </text>
+                  <text x="639.3427248643507" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 639.3427248643507 198)" y="198" opacity="1">
+                     <tspan>Ср 30.12</tspan>
+                  </text>
+                  <text x="684.8427248643507" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0) rotate(-45 684.8427248643507 198)" y="198" opacity="1">
+                     <tspan>Чт 31.12</tspan>
+                  </text>
+               </g>
+               <g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7">
+                  <text x="53" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="116" opacity="1">-5</text>
+                  <text x="53" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="46" opacity="1">0</text>
+                  <text x="53" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="186" opacity="1">-10</text>
+               </g>
+               <text x="786" class="highcharts-credits" text-anchor="end" data-z-index="8" style="cursor:pointer;color:#999999;font-size:9px;fill:#999999;" y="245">Highcharts.com</text>
+            </svg>
+         </div>
+      </div>
+      <p class="white">Интерактивный график изменения температуры в Москве на период с 18 по 31 декабря.
+         Минимальное значение дневной температуры прогнозируется на отметке -7°C, максимальное -2°C. <br>Ночью минимальная температура воздуха составит -6°C, а максимальная 0°C
+      </p>
+   </div>
+
+   <br>
+
+   </div>
+</div>
+{% endblock content %} {% block background-image %}
+{{ backgroundUrl }} {%endblock background-image %}
